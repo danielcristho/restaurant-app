@@ -1,1 +1,1 @@
-# django-restaurant-app
+# Restaurant App using Django and React
