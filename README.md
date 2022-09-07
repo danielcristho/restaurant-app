@@ -1,1 +1,1 @@
-# django-restaurant-app
+# Build an API using Django and React
