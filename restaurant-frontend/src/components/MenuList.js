@@ -1,9 +1,9 @@
-    import axios from "axios";
-    import React, { useState, useEffect } from "react";
-    import { baseURL, headers } from "./../services/menu.services"
-    import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { baseURL, headers } from "./../services/menu.services"
+import { useNavigate } from "react-router-dom";
 
-    export const MenuList = () => {
+export const MenuList = () => {
     const [menus, setMenus] = useState([]);
     const navigate = useNavigate();
 
@@ -13,7 +13,7 @@
         axios
         .get(`${baseURL}/menu/`, {
             headers: {
-            headers,
+                headers,
             },
         })
         .then((response) => {
@@ -29,7 +29,7 @@
         axios
         .delete(`${baseURL}/menu/${id}/`, {
             headers: {
-            headers,
+                headers,
             },
         })
         .then((response) => {
@@ -104,4 +104,4 @@
             </div>
             </div>
         );
-        };
+};

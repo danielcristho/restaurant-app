@@ -80,7 +80,7 @@ export const AddMenu = () => {
                             classname="form-control"
                             id="name"
                             required
-                            value={currentMenu.name}
+                            value={menu.name}
                             onChange={handleMenuChange}
                             name="name"
                             />
@@ -91,7 +91,7 @@ export const AddMenu = () => {
                             classname="form-control"
                             id="description"
                             required
-                            value={currentMenu.description}
+                            value={menu.description}
                             onChange={handleMenuChange}
                             name="description"
                             default 
@@ -103,14 +103,18 @@ export const AddMenu = () => {
                             classname="form-control"
                             id="price"
                             required
-                            value={currentMenu.description}
+                            value={menu.price}
                             onChange={handleMenuChange}
                             name="price"
                             />
                         </div>
 
-                        <button onClick={updateMenu} className="btn btn-success">
-                            Submit
+                        <button
+                        type="submit" 
+                        onClick={submitMenu}
+                        className="btn btn-success mt-2"
+                        >
+                        Submit
                         </button>
                     </div>
                 )}
