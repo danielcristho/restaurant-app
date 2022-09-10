@@ -4,26 +4,27 @@ LABEL maintener="@danielcristho"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1
 
-COPY ./requirements.txt /tmp/requirements.txt
+COPY /requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-EXPOSE 3000
-
 
 RUN apk update \
-    && apk add gcc python3-dev \
-    python -m venv /env && \
-    /env/bin/pip install --upgrade pip && \
-    /env/bin/pip install -r /tmp/requirements.txt \
-    rm -rf /tmp && \
-    adduser \
-        --disabled-password \
-        --no-create-home \ 
-        dev-user
+    && apk add gcc python3-dev
 
-ENV PATH="/env/bin:$PATH"
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
+
+RUN adduser \
+    --disabled-password \
+    --no-create-home \ 
+    dev-user
+
+#ENV PATH="/env/bin:$PATH"
 
 COPY . . 
+
+
+
 
 USER dev-user
