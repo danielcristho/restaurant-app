@@ -1,0 +1,16 @@
+# Git
+.git 
+.gitigonre
+
+# Docker
+.docker 
+
+# Python
+restaurant-backend/__pycache__/
+restaurant-backend/*/__pycache__/
+restaurant-backend/*/*/__pycache__/
+restaurant-backend/*/*/*__pycache__/
+.env/
+.venv/
+env/
+venv/

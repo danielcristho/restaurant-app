@@ -4,9 +4,9 @@ LABEL maintener="@danielcristho"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1
 
-COPY /requirements.txt /app/requirements.txt
+COPY /requirements.txt /restaurant-backend/requirements.txt
 
-WORKDIR /app
+WORKDIR /restaurant-backend
 
 
 RUN apk update \
@@ -23,8 +23,5 @@ RUN adduser \
 #ENV PATH="/env/bin:$PATH"
 
 COPY . . 
-
-
-
 
 USER dev-user
